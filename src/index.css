@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #0f0f0f;
+    color: #e5e5e5;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+@keyframes block-drop {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes conflict-flash {
+  0%,
+  100% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 0 2px #ef4444;
+  }
+}
+
+.animate-block-drop {
+  animation: block-drop 150ms ease-out;
+}
+
+.animate-conflict-flash {
+  animation: conflict-flash 300ms ease-in-out 2;
+}
+
+@keyframes modal-backdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-card {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-modal-backdrop {
+  animation: modal-backdrop 200ms ease-out;
+}
+
+.animate-modal-card {
+  animation: modal-card 200ms ease-out;
+}
